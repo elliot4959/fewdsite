@@ -1,0 +1,84 @@
+/* Global and mobile styles first */
+body {
+  margin: 0;
+  padding: 0;
+  background: rgb(235, 235, 235);
+  text-align: center;
+  font-family: Calibri;
+}
+header {
+  background: rgb(40, 40, 40);
+  color: rgb(240, 240, 240);
+  font-size:20pt;
+  font-style: italic;
+}
+header h1 {
+  margin: 0;
+  padding: 0.3em;
+}
+header h1::selection {
+  background: rgb(75, 7, 107);
+  color: rgb(255, 255, 255);
+}
+header a {
+  color: #000;
+  text-decoration: none;
+}
+nav {
+  background: rgb(120, 120, 120);
+  display: none;
+  font-size: 14pt;
+}
+nav a {
+  padding: 0.75em;
+  display: block;
+  color: rgb(226, 226, 226);
+  font-style: normal;
+}
+#menu {
+  padding: 0.5em;
+  background: rgb(80, 80, 80);
+  display: block;
+  font-size: 20pt;
+}
+.show-menu {
+  display: block;
+}
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background: rgb(20, 20, 20);
+  color: rgb(220, 220, 220);
+  font-size:12pt;
+}
+
+/* First breakpoint - Medium/tablet size */
+@media screen and (min-width: 500px) {
+  nav a {
+    width: 40%;
+    display: inline-block;
+    font-size: 18pt;
+  }
+  nav a:hover {
+    background: #777;
+    color: #fff;
+  }
+}
+/* End first breakpoint */
+
+/* Second breakpoint - Desktop size */
+@media screen and (min-width: 1000px) {
+  nav {
+    display: block;
+  }
+  nav a {
+    line-height: 1em;
+    width: inherit;
+  }
+  #menu {
+    display: none;
+  }
+}
+/* End second breakpoint */
