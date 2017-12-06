@@ -60,7 +60,7 @@ footer {
   nav a {
     width: 40%;
     display: inline-block;
-    font-size: 16pt;
+    font-size: 15pt;
   }
   nav a:hover {
     background: #777;
@@ -77,10 +77,10 @@ footer {
   nav a {
     line-height: 1em;
     width: inherit;
-	padding-bottom: 0.8em;
-	padding-top: 0.8em;
-	padding-left: 3.5%;
-	padding-right: 3.5%;
+    padding-bottom: 0.8em;
+    padding-top: 0.8em;
+    padding-left: 3.5%;
+    padding-right: 3.5%;
   }
   #menu {
     display: none;
