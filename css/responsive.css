@@ -1,11 +1,15 @@
 /* Global and mobile styles first */
+html {
+  position: relative;
+  min-height: 100%;
+}
 body {
-  margin: 0;
+  margin: 0 0 100px;
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
   background: rgb(235, 235, 235);
 }
-img {
+.slideshow {
   width: 100%;
   height: 100%;
 }
@@ -50,7 +54,7 @@ nav a {
   display: block;
 }
 footer {
-  position: fixed;
+  position: absolute;
   bottom: 0;
   width: 100%;
   text-align: center;
@@ -178,3 +182,48 @@ footer {
   to {opacity: 1}
 }
 /* End slideshow styling */
+
+figure {
+  background: #aaa;
+  overflow: hidden;
+  margin: 0;
+  margin-bottom: 0.2em;
+}
+
+figure img {
+  background: #eee;
+  margin-bottom: -4em;
+}
+
+/* 
+  styles the figcaption element when the page first loads. The 
+  `transition` property simply "prepares" the element for a style 
+  transition - it does NOT trigger the transition.
+  `opacity` affects the WHOLE element - at `.78` text less is harsh when
+  visible. If the alpha channel of the rgba `background` transitioned 
+  instead, the text would not be affected and remain 100% black.
+  A `height` of `4em` and `padding` of `.25em` will fit 3 lines of text 
+  with a line-height of 1.2em nicely. For more, change the values.
+*/ 
+figcaption {
+  color: rgb(255, 255, 255);
+  box-sizing: border-box;
+  height: 2em;
+  line-height: 1.2em;
+  padding: .25em;
+  transform: translateY(4em);
+  text-align: center;
+  opacity: 0;
+  transition: all .5s;
+  font-size: 14pt;
+}
+
+/* 
+  These styles are applied to the `figcaption` element when hovering 
+  over the`figure` element. The `transition` property on `figcaption` 
+  above is then applied to `all` these hover styles, over 0.5 seconds.
+*/ 
+figure:hover figcaption {
+  transform: translateY(0em);
+  opacity: 1;
+}
