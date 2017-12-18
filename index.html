@@ -1,64 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
 
-<head>
-  <meta charset="utf-8">
-  <title>Formula 1</title>
-  <link rel="stylesheet" href="css/responsive.css">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-</head>
+<meta charset="utf-8">
+<title>Formula 1</title>
+<link rel="stylesheet" href="css/responsive.css">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<header>
+  <h1>Formula 1</h1>
 
-<body>
+  <a id="menu" href="#">Menu</a>
+  <nav id="nav-menu">
+    <a href="index.html">Home</a>
+    <a href="page2.html">Races</a>
+    <a href="page3.html">Page3</a>
+    <a href="page4.html">Page4</a>
+    <a href="page5.html">Page5</a>
+    <a href="page6.html">Page6</a>
+    <a href="page7.html">Page7</a>
+  </nav>
+</header>
 
-  <header>
-    <h1>Formula 1</h1>
-    
-    <a id="menu" href="#">Menu</a>
-    <nav id="nav-menu">
-      <a href="index.html">Home</a>
-      <a href="page2.html">Races</a>
-      <a href="page3.html">Page3</a>
-      <a href="page4.html">Page4</a>
-      <a href="page5.html">Page5</a>
-      <a href="page6.html">Page6</a>
-      <a href="page7.html">Page7</a>
-    </nav>
-  </header>
-  
-  <section id="slideshow-container">
-    <article class="slides fade">
-      <div class="picIndex">1 / 3</div>
-      <img src="imgs/overtake.jpg" alt = "Ricciardo overtake" class="slideshow">
-      <div class="text">Ricciardo's Baku 'triple pass' voted best overtake of 2017 season</div>
-    </article>
-      
-    <article class="slides fade">
-      <div class="picIndex">2 / 3</div>
-      <img src="imgs/damage.jpg" alt = "'Got damage' team radio" class="slideshow">
-      <div class="text">What was the best team radio message of the 2017 season?</div>
-    </article>
-      
-    <article class="slides fade">
-      <div class="picIndex">3 / 3</div>
-      <img src="imgs/ToroRosso.jpg" alt = "Torro Rosso" class="slideshow">
-      <div class="text">Tost on Toro Rosso’s tumultuous ‘17 season</div>
-    </article>
+<section id="slideshow-container">
+  <article class="slides fade">
+    <img src="imgs/overtake.jpg" alt = "Ricciardo overtake" class="slideshow">
+    <div class="captiontext">Ricciardo's Baku 'triple pass' voted best overtake of 2017 season</div>
+  </article>
 
-    <a class="prev" onclick="moveSlides(-1)">&#10094;</a>
-    <a class="next" onclick="moveSlides(1)">&#10095;</a>
-  </section>
+  <article class="slides fade">
+    <img src="imgs/damage.jpg" alt = "'Got damage' team radio" class="slideshow">
+    <div class="captiontext">What was the best team radio message of the 2017 season?</div>
+  </article>
 
-  <section style="text-align:center">
-    <span class="dot" onclick="setCurrentSlide(1)"></span> 
-    <span class="dot" onclick="setCurrentSlide(2)"></span> 
-    <span class="dot" onclick="setCurrentSlide(3)"></span> 
-  </section>
+  <article class="slides fade">
+    <img src="imgs/ToroRosso.jpg" alt = "Torro Rosso" class="slideshow">
+    <div class="captiontext">Tost on Toro Rosso’s tumultuous ‘17 season</div>
+  </article>
 
-  <footer>
-    <p>This is a footer</p>
-  </footer>
+  <!-- Using entity referencing for this character since it has HTML meaning -->
+  <a class="previous-slide" onclick="moveSlides(-1)">&#10094;</a> <!-- '<' character -->
+  <a class="next-slide" onclick="moveSlides(1)">&#10095;</a> <!-- '>' character -->
+</section>
 
-  <script src="js/menu.js"></script>
-  <script src="js/slideshow.js"></script>
-</body>
-</html>
+<section id="slide-selectors">
+  <span class="selector" onclick="setCurrentSlide(1)"></span>
+  <span class="selector" onclick="setCurrentSlide(2)"></span>
+  <span class="selector" onclick="setCurrentSlide(3)"></span>
+</section>
+
+<section id="flex-container">
+  <figure>
+    <img src="imgs/RedBull.jpg" alt="Red Bull F1 car">
+    <figcaption>
+      What will the new Aston Martin Red Bull Racing car look like?
+    </figcaption>
+  </figure>
+
+  <figure>
+    <img src="imgs/Ferrari.jpg" alt="Ferrari F1 car">
+    <figcaption>
+      Could Ferrari leave Formula 1 after 2020?
+    </figcaption>
+  </figure>
+
+  <figure>
+    <img src="imgs/Mercedes.jpg" alt="Mercedes F1 car">
+    <figcaption>
+      Mercedes bordering 1,000bhp with new Formula 1 engine
+    </figcaption>
+  </figure>
+
+  <figure>
+    <img src="imgs/Williams.jpg" alt="Williams F1 car">
+    <figcaption>
+      Who will partner Stroll for Williams in 2018?
+    </figcaption>
+  </figure>
+</section>
+
+<footer>
+  <p>This is a footer
+</footer>
+
+<script src="js/menu.js"></script>
+<script src="js/slideshow.js"></script>

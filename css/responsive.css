@@ -6,7 +6,7 @@ html {
 body {
   margin: 0 0 100px;
   padding: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: arial, helvetica, sans-serif;
   background: rgb(235, 235, 235);
 }
 .slideshow {
@@ -17,14 +17,14 @@ header {
   background: rgb(50, 50, 50);
   color: rgb(240, 240, 240);
   text-align: center;
-  font-size:18pt;
+  font-size: 18pt;
   font-style: italic;
 }
-header h1 {
+h1 {
   margin: 0;
-  padding: 0.4em;
+  padding: 0.3em;
 }
-header h1::selection {
+h1::selection {
   background: rgb(75, 7, 107);
   color: rgb(255, 255, 255);
 }
@@ -52,6 +52,42 @@ nav a {
 }
 .show-menu {
   display: block;
+}
+#flex-container {
+  margin-top: 3em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: rgb(230, 230, 230);
+}
+figure {
+  width: 400px;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+  overflow: hidden;
+}
+figure img {
+  margin-bottom: -2em;
+}
+figcaption {
+  width: 100%;
+  text-align: center;
+  background: rgb(255, 255, 255);
+  box-sizing: border-box;
+  height: 2em;
+  line-height: 1.2em;
+  padding: .25em;
+  transform: translateY(4em);
+  text-align: center;
+  opacity: 0;
+  transition: all .5s;
+  font-size: 10pt;
+}
+figure:hover figcaption {
+  transform: translateY(0em);
+  opacity: 0.75;
 }
 footer {
   position: absolute;
@@ -97,10 +133,6 @@ footer {
 /* End second breakpoint */
 
 /* Slideshow styling */
-* {box-sizing:border-box}
-.slides {display:none}
-
-/* Slideshow container */
 #slideshow-container {
   max-width: 1500px;
   max-height: 600px;
@@ -110,7 +142,7 @@ footer {
 }
 
 /* Next & previous buttons */
-.prev, .next {
+.previous-slide, .next-slide {
   cursor: pointer;
   position: absolute;
   top: 50%;
@@ -125,37 +157,35 @@ footer {
 }
 
 /* Position the "next button" to the right */
-.next {
+.next-slide {
   right: 0;
   border-radius: 3px 0 0 3px;
 }
 
 /* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
+.previous-slide:hover, .next-slide:hover {
   background-color: rgba(0,0,0,0.8);
 }
 
 /* Caption text styling */
-.text {
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px;
+.captiontext {
+  color: rgb(20, 20, 20);
+  background: rgb(235, 235, 235);
+  font-size: 12pt;
   position: absolute;
-  bottom: 8px;
+  bottom: 0;
   width: 100%;
   text-align: center;
+  font-weight: bold;
+  line-height: 2em;
 }
 
-/* Slide numbers */
-.picIndex {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
+#slide-selectors {
+  margin-top: 0.25em;
+  text-align: center;
 }
-
-/* Dot styling */
-.dot {
+/* Selector dot styling */
+.selector {
   cursor: pointer;
   height: 15px;
   width: 15px;
@@ -165,8 +195,8 @@ footer {
   display: inline-block;
   transition: background-color 0.6s ease;
 }
- /* When a dot is active, or hovered over, set the colour to darker grey */
-.active, .dot:hover {
+ /* When a selector dot is active, or hovered over, set the colour to darker grey */
+.active, .selector:hover {
   background-color: #717171;
 }
 
@@ -178,52 +208,7 @@ footer {
 
 /* Keyframes for fading animation */
 @keyframes fade {
-  from {opacity: .4} 
+  from {opacity: .4}
   to {opacity: 1}
 }
 /* End slideshow styling */
-
-figure {
-  background: #aaa;
-  overflow: hidden;
-  margin: 0;
-  margin-bottom: 0.2em;
-}
-
-figure img {
-  background: #eee;
-  margin-bottom: -4em;
-}
-
-/* 
-  styles the figcaption element when the page first loads. The 
-  `transition` property simply "prepares" the element for a style 
-  transition - it does NOT trigger the transition.
-  `opacity` affects the WHOLE element - at `.78` text less is harsh when
-  visible. If the alpha channel of the rgba `background` transitioned 
-  instead, the text would not be affected and remain 100% black.
-  A `height` of `4em` and `padding` of `.25em` will fit 3 lines of text 
-  with a line-height of 1.2em nicely. For more, change the values.
-*/ 
-figcaption {
-  color: rgb(255, 255, 255);
-  box-sizing: border-box;
-  height: 2em;
-  line-height: 1.2em;
-  padding: .25em;
-  transform: translateY(4em);
-  text-align: center;
-  opacity: 0;
-  transition: all .5s;
-  font-size: 14pt;
-}
-
-/* 
-  These styles are applied to the `figcaption` element when hovering 
-  over the`figure` element. The `transition` property on `figcaption` 
-  above is then applied to `all` these hover styles, over 0.5 seconds.
-*/ 
-figure:hover figcaption {
-  transform: translateY(0em);
-  opacity: 1;
-}
