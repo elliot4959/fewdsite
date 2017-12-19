@@ -1,65 +1,11 @@
 /* Global and mobile styles first */
-html {
-  position: relative;
-  min-height: 100%;
-}
 body {
   margin: 0 0 100px;
   padding: 0;
-  font-family: arial, helvetica, sans-serif;
+  font-family: helvetica;
   background: rgb(235, 235, 235);
 }
-.slideshow {
-  width: 100%;
-  height: 100%;
-}
-header {
-  background: rgb(50, 50, 50);
-  color: rgb(240, 240, 240);
-  text-align: center;
-  font-size: 18pt;
-  font-style: italic;
-}
-h1 {
-  margin: 0;
-  padding: 0.3em;
-}
-h1::selection {
-  background: rgb(75, 7, 107);
-  color: rgb(255, 255, 255);
-}
-header a {
-  color: #000;
-  text-decoration: none;
-  font-size: 10pt;
-}
-nav {
-  background: rgb(120, 120, 120);
-  display: none;
-}
-nav a {
-  padding: 0.75em;
-  display: block;
-  color: rgb(226, 226, 226);
-  font-style: normal;
-  font-size: 13pt;
-}
-#menu {
-  padding: 0.5em;
-  background: rgb(80, 80, 80);
-  display: block;
-  font-size: 20pt;
-}
-.show-menu {
-  display: block;
-}
-#flex-container {
-  margin-top: 3em;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  background-color: rgb(230, 230, 230);
-}
+
 figure {
   width: 400px;
   margin: 10px;
@@ -86,9 +32,18 @@ figcaption {
   font-size: 10pt;
 }
 figure:hover figcaption {
-  transform: translateY(0em);
-  opacity: 0.75;
+  transform: translateY(0);
+  opacity: .75;
 }
+
+#flex-container {
+  margin-top: 3em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: rgb(230, 230, 230);
+}
+
 footer {
   position: absolute;
   bottom: 0;
@@ -99,6 +54,55 @@ footer {
   font-size:12pt;
 }
 
+h1 {
+  margin: 0;
+  padding: .3em;
+}
+h1::selection {
+  background: rgb(75, 7, 107);
+  color: rgb(255, 255, 255);
+}
+
+header {
+  background: rgb(50, 50, 50);
+  color: rgb(240, 240, 240);
+  text-align: center;
+  font-size: 18pt;
+  font-style: italic;
+}
+header a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  font-size: 10pt;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+#menu {
+  padding: .5em;
+  background: rgb(80, 80, 80);
+  display: block;
+  font-size: 20pt;
+}
+.show-menu {
+  display: block;
+}
+
+nav {
+  background: rgb(120, 120, 120);
+  display: none;
+}
+nav a {
+  padding: .75em;
+  display: block;
+  color: rgb(226, 226, 226);
+  font-style: normal;
+  font-size: 13pt;
+}
+
 /* First breakpoint - Medium/tablet size */
 @media screen and (min-width: 500px) {
   nav a {
@@ -107,8 +111,7 @@ footer {
     font-size: 15pt;
   }
   nav a:hover {
-    background: #777;
-    color: #fff;
+    color: rgb(255, 255, 255);
   }
 }
 /* End first breakpoint */
@@ -121,10 +124,7 @@ footer {
   nav a {
     line-height: 1em;
     width: inherit;
-    padding-bottom: 0.8em;
-    padding-top: 0.8em;
-    padding-left: 3.5%;
-    padding-right: 3.5%;
+    padding: .8em 3.5% 
   }
   #menu {
     display: none;
@@ -132,7 +132,25 @@ footer {
 }
 /* End second breakpoint */
 
+
 /* Slideshow styling */
+.captiontext {
+  color: rgb(20, 20, 20);
+  background: rgb(235, 235, 235);
+  font-size: 12pt;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  line-height: 2em;
+}
+
+.slideshow {
+  width: 100%;
+  height: 100%;
+}
+
 #slideshow-container {
   max-width: 1500px;
   max-height: 600px;
@@ -152,7 +170,7 @@ footer {
   color: white;
   font-weight: bold;
   font-size: 18px;
-  transition: 0.6s ease;
+  transition: .6s ease;
   border-radius: 0 3px 3px 0;
 }
 
@@ -164,24 +182,11 @@ footer {
 
 /* On hover, add a black background color with a little bit see-through */
 .previous-slide:hover, .next-slide:hover {
-  background-color: rgba(0,0,0,0.8);
-}
-
-/* Caption text styling */
-.captiontext {
-  color: rgb(20, 20, 20);
-  background: rgb(235, 235, 235);
-  font-size: 12pt;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
-  font-weight: bold;
-  line-height: 2em;
+  background-color: rgba(0, 0, 0, .8);
 }
 
 #slide-selectors {
-  margin-top: 0.25em;
+  margin-top: .25em;
   text-align: center;
 }
 /* Selector dot styling */
@@ -190,14 +195,14 @@ footer {
   height: 15px;
   width: 15px;
   margin: 0 2px;
-  background-color: #bbb;
+  background-color: rgb(187, 187, 187);
   border-radius: 50%;
   display: inline-block;
-  transition: background-color 0.6s ease;
+  transition: background-color .6s ease;
 }
  /* When a selector dot is active, or hovered over, set the colour to darker grey */
 .active, .selector:hover {
-  background-color: #717171;
+  background-color: rgb(113, 113, 113);
 }
 
 /* Fading animation */
