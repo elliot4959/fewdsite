@@ -6,6 +6,28 @@ body {
   background: rgb(235, 235, 235);
 }
 
+.circuit {
+  background-color: rgb(255, 255, 255);
+  display: inline-block;
+  max-width: 100%;
+}
+.circuit h2 {
+  padding-left: 1em;
+}
+.circuit-image {
+  width: 70%;
+  float: left;
+}
+.circuit-img {
+  width: 100%;
+  height: 100%;
+}
+.circuit-info {
+  margin-top: 2em;
+  width: 30%;
+  float: left;
+}
+
 figure {
   width: 400px;
   margin: 10px;
@@ -81,6 +103,10 @@ html {
   min-height: 100%;
 }
 
+main {
+  margin: 2% 10% 0 10%;
+}
+
 #menu {
   padding: .5em;
   background: rgb(80, 80, 80);
@@ -101,6 +127,22 @@ nav a {
   color: rgb(226, 226, 226);
   font-style: normal;
   font-size: 13pt;
+}
+
+p {
+  width: 95%;
+  font-size: 13pt;
+}
+
+td {
+  padding-bottom: 5em;
+  font-weight: bold;
+}
+.table-title {
+  text-align: left;
+}
+.table-data {
+  text-align: center;
 }
 
 /* First breakpoint - Medium/tablet size */
