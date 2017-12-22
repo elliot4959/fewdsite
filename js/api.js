@@ -6,6 +6,7 @@
   let xhr = new XMLHttpRequest();
   // get elements to print data
   let tempOutput = document.getElementById("track-temp");
+  let weatherOutput = document.getElementById("track-weather");
   
   // construct base for request URL
   let baseURL = "https://api.worldweatheronline.com/premium/v1/weather.ashx?key=6e5bf6c426e3464d831142025172411&q=Silverstone,UnitedKingdom&num_of_days=1&fx=no&mca=no&format=json";
@@ -15,6 +16,7 @@
     let currentCondition = data.data.current_condition[0];
     console.log(currentCondition);
     tempOutput.innerHTML = currentCondition.temp_C + "ºC";
+    weatherOutput.innerHTML = currentCondition.weatherDesc[0].value;
   }
 
   // open a connection to the API
