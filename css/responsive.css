@@ -158,6 +158,24 @@ p {
   font-weight: bold;
 }
 
+.sitemap {
+  text-align: left;
+  max-width: 90%;
+}
+.sitemap h2 {
+  padding-top: 2em;
+}
+.sitemap a {
+  font-style: normal;
+  text-decoration: none;
+  color: rgb(0, 0, 255);
+}
+.sitemap a:hover {
+  color: rgb(255, 0, 0);
+}
+.sitemap p {
+  padding-left: 7%;
+}
 
 /* Slideshow styling */
 .captiontext {
@@ -315,7 +333,7 @@ p {
   nav a:hover {
     color: rgb(255, 255, 255);
   }
-  
+
   #menu {
     display: none;
   }
