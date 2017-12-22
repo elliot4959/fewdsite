@@ -1,15 +1,39 @@
 "use strict";
 
+// Variable for slide index so we can keep track of where in the slideshow we are
 let slideIndex = 1;
+// Variables for the HTML elements that will be used in the javascript
+// With their event listeners to run specific functions when clicked
+let prevSlideButton = document.getElementById("prev-slide").addEventListener("click", prevSlide);
+let nextSlideButton = document.getElementById("next-slide").addEventListener("click", nextSlide);
+let selectorOne = document.getElementById("selector-one").addEventListener("click", setSlideOne);
+let selectorTwo = document.getElementById("selector-two").addEventListener("click", setSlideTwo);
+let selectorThree = document.getElementById("selector-three").addEventListener("click", setSlideThree);
+
+function prevSlide() {
+  // Show previous slide and update slide index
+  showSlides(slideIndex -= 1);
+}
+function nextSlide() {
+  // Show next slide and update slide index
+  showSlides(slideIndex += 1);
+}
+
+function setSlideOne() {
+  // Show slide one and update slide index
+  showSlides(slideIndex = 1);
+}
+function setSlideTwo() {
+  // Show slide two and update slide index
+  showSlides(slideIndex = 2);
+}
+function setSlideThree() {
+  // Show slide three and update slide index
+  showSlides(slideIndex = 3);
+}
+
+// Show whichever slide the index is currently pointing to
 showSlides(slideIndex);
-
-function moveSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-function setCurrentSlide(n) {
-  showSlides(slideIndex = n);
-}
 
 function showSlides(n) {
   // Index for modifying all slides in list

@@ -36,14 +36,14 @@
   </article>
 
   <!-- Using entity referencing for this character since it has HTML meaning -->
-  <a class="previous-slide" onclick="moveSlides(-1)">&#10094;</a> <!-- '<' character -->
-  <a class="next-slide" onclick="moveSlides(1)">&#10095;</a> <!-- '>' character -->
+  <a id = "prev-slide">&#10094;</a> <!-- '<' character -->
+  <a id = "next-slide">&#10095;</a> <!-- '>' character -->
 </section>
 
 <section id="slide-selectors">
-  <span class="selector" onclick="setCurrentSlide(1)"></span>
-  <span class="selector" onclick="setCurrentSlide(2)"></span>
-  <span class="selector" onclick="setCurrentSlide(3)"></span>
+  <span id = "selector-one" class="selector"></span>
+  <span id = "selector-two"  class="selector"></span>
+  <span id = "selector-three"  class="selector"></span>
 </section>
 
 <section id="flex-container">

@@ -14,7 +14,6 @@
   function gatherData(data) {
     // Get the data from the API call
     let currentCondition = data.data.current_condition[0];
-    console.log(currentCondition);
     tempOutput.innerHTML = currentCondition.temp_C + "ºC";
     weatherOutput.innerHTML = currentCondition.weatherDesc[0].value;
   }
