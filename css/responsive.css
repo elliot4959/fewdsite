@@ -134,15 +134,15 @@ p {
   font-size: 13pt;
 }
 
-td {
-  padding-bottom: 5em;
-  font-weight: bold;
-}
 .table-title {
   text-align: left;
 }
 .table-data {
   text-align: center;
+}
+td {
+  padding-bottom: 5em;
+  font-weight: bold;
 }
 
 /* First breakpoint - Medium/tablet size */
