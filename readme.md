@@ -18,8 +18,39 @@ I would like here to talk about two technical decisions I had to make during the
  
 Of course, I had to make many more decisions than this, but I feel this has already run on somewhat, so I will leave it and hope that my website can speak for itself regarding things done or not done.
 
+---
 ### Problem Solving
+As with any programming endeavour, a large amount of my time was fixing problems that cropped up throughout development. Some of the more interesting or complex ones would be:
 
+* The alignment of the news articles on my index page, under the slideshow. Now, plain CSS would be an effective solution to this problem, but I decided to follow another path. I had a few reasons for doing this: My CSS document is already sitting at a healthy 342 lines, no need to make it bigger unnecessarily; I was designing for multiple screen sizes, so I would have to consider the layout myself at these differing sizes, and why make work for myself when I don't have to; The alternate solution should hopefully score me some style points, but the first two reasons were **_definitely_** the driving force here.
+* The API call to gather weather information. This one I had to include because it was a real lightbulb moment for me, despite the problem being really simple in hindsight (it really is a gift and a curse).
+
+#### Alignment
+For my alignment, I ended up using flexbox. Now with only a few short flexbox lines I achieved exactly the behaviour I was looking for.
+**Flexbox CSS**
+```css
+#flex-container {
+  margin-top: 3em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: rgb(230, 230, 230);
+}
+```
+So, by simply telling my container that it would use the flex display, that when resizing the screen, the flex items should separate to separate lines to maintain good readability and to show the items in the centre (or "center") I have all that I wanted in a compact and semantically meaningful way. No need to even write code comments here since this really explains itself.
+
+#### API
+I would like to think that no matter how experience a programmer you are, you will always make silly mistakes and feel fantastic when you manage to fix the problem you yourself created. I had a moment like this myself with my API call. The easiest way to explain this is with a show and tell demonstration:
+**Original API URL**
+```javascript
+let baseURL = "https://api.worldweatheronline.com/premium/v1/weather.ashx?key=6e5bf6c426e3464d831142025172411 \
+               &q=Silverstone,UnitedKingdom \
+               &num_of_days=1 \
+               &fx=no \
+               &mca=no \
+               &format=json";
+```
+As the figure title might suggest, this is the first URL I attempted to use. I felt pretty good since I managed to break up the query string into its separate components to make it easily readable and added the backslashes to concatenate it to one big string. However, when I tried to use this to make my API call, I kept getting an error from the server (400 (Parameter key is missing from the request URL)). This confused me to no end, I could see my key right there in the URL, I checked and double checked that there were no typos in said key, I typed the URL in manually to my web client and found the URL worked fine, so I decided to do what I believe anyone would in my shoes, I decided to debug. I added as many console.log() lines as I possibly could and trawled through the console to check where my issue was, and finally I was rewarded. The actual URL I was sending was as follows: ![Bad API URL](https://image.prntscr.com/image/tqk9BrZjQT263n4Nu55fzg.png);
 
 ### Code/Ideas Used
 https://google.github.io/styleguide/htmlcssguide.html (up to shorthand)
