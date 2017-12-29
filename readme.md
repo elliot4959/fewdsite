@@ -27,6 +27,7 @@ As with any programming endeavour, a large amount of my time was fixing problems
 
 #### Alignment
 For my alignment, I ended up using flexbox. Now with only a few short flexbox lines I achieved exactly the behaviour I was looking for.
+
 **Flexbox CSS**
 ```css
 #flex-container {
@@ -41,6 +42,7 @@ So, by simply telling my container that it would use the flex display, that when
 
 #### API
 I would like to think that no matter how experience a programmer you are, you will always make silly mistakes and feel fantastic when you manage to fix the problem you yourself created. I had a moment like this myself with my API call. The easiest way to explain this is with a show and tell demonstration:
+
 **Original API URL**
 ```javascript
 let baseURL = "https://api.worldweatheronline.com/premium/v1/weather.ashx?key=6e5bf6c426e3464d831142025172411 \
@@ -56,6 +58,7 @@ And there was my problem, by separating my lines and including backslashes I had
 My solution to this problem was to remove all the separation and simply enter the whole string and have it all written in my code as one long line. This solved my problem and I was relatively happy with this, though I really would have liked to have the lines separated in code to make it far easier to read and modify.
 
 Then, whilst writing this README, I found my solution:
+
 **Final API URL**
 ```javascript
 let baseURL = "https://api.worldweatheronline.com/premium/v1/weather.ashx?key=6e5bf6c426e3464d831142025172411" +
