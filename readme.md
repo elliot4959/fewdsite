@@ -50,7 +50,22 @@ let baseURL = "https://api.worldweatheronline.com/premium/v1/weather.ashx?key=6e
                &mca=no \
                &format=json";
 ```
-As the figure title might suggest, this is the first URL I attempted to use. I felt pretty good since I managed to break up the query string into its separate components to make it easily readable and added the backslashes to concatenate it to one big string. However, when I tried to use this to make my API call, I kept getting an error from the server (400 (Parameter key is missing from the request URL)). This confused me to no end, I could see my key right there in the URL, I checked and double checked that there were no typos in said key, I typed the URL in manually to my web client and found the URL worked fine, so I decided to do what I believe anyone would in my shoes, I decided to debug. I added as many console.log() lines as I possibly could and trawled through the console to check where my issue was, and finally I was rewarded. The actual URL I was sending was as follows: ![Bad API URL](https://image.prntscr.com/image/tqk9BrZjQT263n4Nu55fzg.png);
+As the figure title might suggest, this is the first URL I attempted to use. I felt pretty good since I managed to break up the query string into its separate components to make it easily readable and added the backslashes to concatenate it to one big string. However, when I tried to use this to make my API call, I kept getting an error from the server (400 (Parameter key is missing from the request URL)). This confused me to no end, I could see my key right there in the URL, I checked and double checked that there were no typos in said key, I typed the URL in manually to my web client and found the URL worked fine, so I decided to do what I believe anyone would in my shoes, I decided to debug. I added as many console.log() lines as I possibly could and trawled through the console to check where my issue was, and finally I was rewarded. The actual URL I was sending was as follows: ![Bad API URL](https://image.prntscr.com/image/tqk9BrZjQT263n4Nu55fzg.png)
+And there was my problem, by separating my lines and including backslashes I had added numerous spaces to my URL which caused it to behave unexpectedly with the Server.
+
+My solution to this problem was to remove all the separation and simply enter the whole string and have it all written in my code as one long line. This solved my problem and I was relatively happy with this, though I really would have liked to have the lines separated in code to make it far easier to read and modify.
+
+Then, whilst writing this README, I found my solution:
+**Final API URL**
+```javascript
+let baseURL = "https://api.worldweatheronline.com/premium/v1/weather.ashx?key=6e5bf6c426e3464d831142025172411" +
+                "&q=Silverstone,UnitedKingdom" +
+                "&num_of_days=1" +
+                "&fx=no" +
+                "&mca=no" +
+                "&format=json";
+```
+Thanks to the actual closing of the strings on each line and then the concatenation of the next string to the previous, this method provides the exact URL I need and makes the code look far better. A real win-win found at the very last moment.
 
 ### Code/Ideas Used
 https://google.github.io/styleguide/htmlcssguide.html (up to shorthand)
