@@ -8,7 +8,7 @@ Looking further down the page I also implemented the smaller news stories, I wen
 
 I also used the offical website to help me see how I might design my other pages, as I am not a particularly artistic or visionary designer. I am very pleased with this finished product, however, and am glad I was able to credit the place most of my design ideas began.
 
---------
+---
 ### Decisions
 I would like here to talk about two technical decisions I had to make during the creation of this website.
 
