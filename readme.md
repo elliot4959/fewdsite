@@ -67,6 +67,14 @@ let baseURL = "https://api.worldweatheronline.com/premium/v1/weather.ashx?key=6e
 ```
 Thanks to the actual closing of the strings on each line and then the concatenation of the next string to the previous, this method provides the exact URL I need and makes the code look far better. A real win-win found at the very last moment.
 
+---
 ### Code/Ideas Used
-https://google.github.io/styleguide/htmlcssguide.html (up to shorthand)
-https://html.spec.whatwg.org/multipage/syntax.html#syntax-tag-omission
+When starting this website, I had little idea how to create a slideshow without the help of existing JavaScript libraries or frameworks. I managed to achieve this thanks to the example code and explanations provided by W3Schools with their [How TO - Slideshow page](https://www.w3schools.com/howto/howto_js_slideshow.asp).
+I took the existing code here, separated all the styling and scripts from the HTML and moved them to their respective destinations. I then refactored it to use modern HTML and JavaScript practices, added descriptive comments, cleaned up the code and fully implemented it with my website.
+
+For my responsive menu, I took the code from the relevant lab's GitHub, [Week 4: introduction to responsive design](https://github.com/CTEC3905/04-lab/tree/nav) as my starting point. This has undergone a number of changes so is significantly different from the original, but it was my starting point so there will still be shared features between both.
+
+Finally, for my API call, I again used the relevant lab's GitHub, [Week 8+9: JavaScript and data  ](https://github.com/CTEC3905/08-lab-json-ajax). This code was great for getting me started with APIs, again has been changed as the APIs in both instances differ quite significantly. But without this code, I would have had no idea where to even begin, so the structure and some elements of the code will be similar, if not the same.
+
+When writing my HTML and CSS, I was making up and guessing at the conventions followed by programmers. I realised to help my code be the best it could be, I needed to find an existing and popular guide for these conventions, or styles. I decided to use the one provided by Google, the aptly named [Google HTML/CSS Style Guide](https://google.github.io/styleguide/htmlcssguide.html). This gave me a lot more confidence with how to write and structure my CSS. I was very surprised when I came to the section about [omitting optional tags](https://google.github.io/styleguide/htmlcssguide.html#Optional_Tags), though I did follow through since I felt you can't pick and choose which aspects of the Guide you can and cannot follow and still expect good consistency with your code.
+I was also glad to see Google's omissions was endorsed by the [HTML Standard](https://html.spec.whatwg.org/multipage/syntax.html#syntax-tag-omission) allowing me to feel much happier removing what I thought were important, if not vital, HTML elements.
