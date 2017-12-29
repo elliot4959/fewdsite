@@ -1,6 +1,5 @@
 # Front-End Web Development Assignment 2 Website
 ## Formula 1 Website
---------
 
 ### Designs and Ideas
 The first place I went for design inspiration for my Formula 1 website was the official [Formula 1 website](https://www.formula1.com/). From here I got the idea of a large slideshow taking centre stage of my index page.
